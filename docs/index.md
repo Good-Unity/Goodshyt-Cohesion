@@ -1,3 +1,3 @@
 # GoodShyt Cohesion
 
-Coordination without friction.
+Coordination Without Friction.

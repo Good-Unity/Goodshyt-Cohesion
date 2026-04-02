@@ -3,10 +3,8 @@ from .models import Assignment, AssignmentRequest, Worker
 class CohesionService:
     def assign(self, payload: AssignmentRequest) -> list[Assignment]:
         capacities = {worker.worker_id: worker.capacity for worker in payload.workers}
-        worker_index = {worker.worker_id: worker for worker in payload.workers}
         completed: set[str] = set()
         assignments: list[Assignment] = []
-
         for task in payload.tasks:
             unmet = [dep for dep in task.dependencies if dep not in completed]
             if unmet:
